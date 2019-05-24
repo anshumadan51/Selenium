@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>May 24, 2019 05:12:13 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>8</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>37</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Contact US Page</span>
+						<span class='test-time'>May 24, 2019 05:12:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 35s+633ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify Mandatory Fields for contact us</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given User open "Chrome" browser</span>
+				<div class='pre'>Launching the Browser</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Open URL</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User Click on "HomePage/ContactUs" button</span>
+				<div class='pre'>Clicking on [HomePage/ContactUs]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User Click on "ContactUsPage/SubmitButton" button</span>
+				<div class='pre'>Clicking on [ContactUsPage/SubmitButton]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User wait for "1000"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify error toast message "Please select an item in the list."</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1029.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User get the list of mandatory fields "ContactUsPage/MandatoryDropDown"</span>
+				<div class='pre'>Element attribute value: reachoutforproduct</div>
+				<div class='pre'>Element attribute value: compInqServ</div>
+				<div class='pre'>Element attribute value: need</div>
+				<div class='pre'>Element attribute value: product</div>
+				<div class='pre'>Element attribute value: emirate</div>
+				<div class='pre'>Element attribute value: branch</div>
+				<div class='pre'>Element attribute value: mob1</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User get the list of mandatory fields "ContactUsPage/MandatoryInputBox"</span>
+				<div class='pre'>Element attribute value: firstName</div>
+				<div class='pre'>Element attribute value: email</div>
+				<div class='pre'>Element attribute value: mobile</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='11' status='pass'>
+	<span class='duration right label'>0h 0m 2s+398ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify initial value of Select Sub Product field</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='12' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify field "ContactUsPage/SubProduct" value "-- Select Sub Product --"</span>
+				<div class='pre'>Element value: -- Select Sub Product --</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='13' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1030.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='14' status='pass'>
+	<span class='duration right label'>0h 0m 2s+773ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify <I am looking to> field dropDown values</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='15' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User verify drop Down "ContactUsPage/LookingTo" values from excel "Items"</span>
+				<div class='pre'>DropDownValues are [ContactUsPage/LookingTo] value as [Ljava.lang.String;@7bbbb6a8</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1031.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='17' status='pass'>
+	<span class='duration right label'>0h 0m 2s+983ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify SubProduct DropDown Value</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='18' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User select dropDown "ContactUsPage/Product" value "Loans"</span>
+				<div class='pre'>Select DropDown [ContactUsPage/Product] value as [Loans]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='19' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User verify drop Down "ContactUsPage/SubProduct" values from excel "Items"</span>
+				<div class='pre'>DropDownValues are [ContactUsPage/SubProduct] value as [Ljava.lang.String;@66bacdbc</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='20' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User verify total drop Down "ContactUsPage/SubProduct" value "7"</span>
+				<div class='pre'>DropDownValues are [ContactUsPage/SubProduct] value as [Ljava.lang.String;@14f3c6fc</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='21' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1032.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='22' status='pass'>
+	<span class='duration right label'>0h 0m 6s+75ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify Mobile Number input fields</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='23' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User enter value in field "ContactUsPage/Mobile" from excel "MobileNumber1"</span>
+				<div class='pre'>Entering value in [ContactUsPage/Mobile] as [123456]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='24' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "ContactUsPage/MobileNumberErrorMessage" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='25' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1033.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='26' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User wait for "2000"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='27' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User enter value in field "ContactUsPage/Mobile" from excel "MobileNumber2"</span>
+				<div class='pre'>Entering value in [ContactUsPage/Mobile] as [1234567]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='28' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "ContactUsPage/MobileNumberErrorMessageHide" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='29' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1034.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='30' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User Close the browser</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>HomePage Validations</span>
+						<span class='test-time'>May 24, 2019 05:13:03 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='32' status='pass'>
+	<span class='duration right label'>0h 0m 19s+539ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify All items on Navigation bar</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='33' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given User open "Chrome" browser</span>
+				<div class='pre'>Launching the Browser</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='34' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And Open URL</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='35' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "HomePage/logoImage" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='36' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User Verify Items on Navigation Bar "HomePage/NavigationBaritems" from excel "Items"</span>
+				<div class='pre'>Verify element by text:[Corporate] is exist</div>
+				<div class='pre'>Verify element by text:[Business] is exist</div>
+				<div class='pre'>Verify element by text:[International] is exist</div>
+				<div class='pre'>Verify element by text:[Private Banking] is exist</div>
+				<div class='pre'>Verify element by text:[Al Islami] is exist</div>
+				<div class='pre'>Verify element by text:[Gold] is exist</div>
+				<div class='pre'>Verify element by text:[Mashreq Securities] is exist</div>
+				<div class='pre'>Verify element by text:[Mashreq Capital] is exist</div>
+				<div class='pre'>Verify element by text:[Mashreq Global Services] is exist</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='37' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1035.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='38' status='pass'>
+	<span class='duration right label'>0h 0m 2s+766ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify News Box</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='39' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "HomePage/NewsBox" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='40' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1036.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='41' status='pass'>
+	<span class='duration right label'>0h 0m 6s+402ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Verify Contact Us link</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='42' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "HomePage/ContactUs" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='43' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User Click on "HomePage/ContactUs" button</span>
+				<div class='pre'>Clicking on [HomePage/ContactUs]</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='44' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User wait for "3000"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='45' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User verify element "ContactUsPage/WelcomeMessage" on screen</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='46' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User take screenshots</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="ScreenShot_1037.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='47' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User Close the browser</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>2</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>8</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>37</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>May 24, 2019 05:12:13 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>May 24, 2019 05:13:32 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>78,716ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 8,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 37,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>

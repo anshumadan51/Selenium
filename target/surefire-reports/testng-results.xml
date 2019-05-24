@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="287" started-at="2019-05-23T10:19:21Z" finished-at="2019-05-23T10:19:22Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runner.TestRunner@50f8360d]" name="feature" class="runner.TestRunner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Test" duration-ms="287" started-at="2019-05-23T10:19:21Z" finished-at="2019-05-23T10:19:22Z">
+      <class name="runner.TestRunner">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:runner.TestRunner@50f8360d]" name="setUp" is-config="true" duration-ms="8" started-at="2019-05-23T10:19:21Z" finished-at="2019-05-23T10:19:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="HtmlFile()[pri:0, instance:runner.TestRunner@50f8360d]" name="HtmlFile" is-config="true" duration-ms="19" started-at="2019-05-23T10:19:21Z" finished-at="2019-05-23T10:19:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HtmlFile -->
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:runner.TestRunner@50f8360d]" name="setUpClass" is-config="true" duration-ms="186" started-at="2019-05-23T10:19:21Z" finished-at="2019-05-23T10:19:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:runner.TestRunner@50f8360d]" name="feature" duration-ms="3" started-at="2019-05-23T10:19:22Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-05-23T10:19:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Verify Navigation Bar]]>
+              </value>
+            </param>
+          </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:114)
+at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
+at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
+at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
+at com.sun.proxy.$Proxy22.uri(Unknown Source)
+at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:160)
+at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
+at runner.TestRunner.feature(TestRunner.java:63)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:178)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:96)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:159)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:87)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+Caused by: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+at com.cucumber.listener.ExtentCucumberFormatter.setExtentHtmlReport(ExtentCucumberFormatter.java:51)
+at com.cucumber.listener.ExtentCucumberFormatter.<init>(ExtentCucumberFormatter.java:35)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:107)
+... 41 more
+Caused by: java.lang.ClassNotFoundException: com.aventstack.extentreports.reporter.ExtentHtmlReporter
+at java.net.URLClassLoader.findClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+at java.lang.ClassLoader.loadClass(Unknown Source)
+... 48 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="FAIL" signature="tearDownClass()[pri:0, instance:runner.TestRunner@50f8360d]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-05-23T10:19:22Z" finished-at="2019-05-23T10:19:22Z">
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:114)
+at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
+at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
+at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
+at com.sun.proxy.$Proxy22.done(Unknown Source)
+at cucumber.api.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:76)
+at runner.TestRunner.tearDownClass(TestRunner.java:75)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:178)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:96)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:159)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:87)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+Caused by: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+at com.cucumber.listener.ExtentCucumberFormatter.setExtentHtmlReport(ExtentCucumberFormatter.java:51)
+at com.cucumber.listener.ExtentCucumberFormatter.<init>(ExtentCucumberFormatter.java:35)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:107)
+... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method status="SKIP" signature="CopyResult()[pri:0, instance:runner.TestRunner@50f8360d]" name="CopyResult" is-config="true" duration-ms="0" started-at="2019-05-23T10:19:22Z" finished-at="2019-05-23T10:19:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CopyResult -->
+        <test-method status="SKIP" signature="afterSuit()[pri:0, instance:runner.TestRunner@50f8360d]" name="afterSuit" is-config="true" duration-ms="0" started-at="2019-05-23T10:19:22Z" finished-at="2019-05-23T10:19:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuit -->
+      </class> <!-- runner.TestRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

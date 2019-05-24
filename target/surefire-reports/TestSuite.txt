@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 2, Time elapsed: 0.788 sec <<< FAILURE!
+feature(runner.TestRunner)  Time elapsed: 0.009 sec  <<< FAILURE!
+cucumber.runtime.CucumberException: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at com.cucumber.listener.ExtentCucumberFormatter.setExtentHtmlReport(ExtentCucumberFormatter.java:51)
+	at com.cucumber.listener.ExtentCucumberFormatter.<init>(ExtentCucumberFormatter.java:35)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:107)
+	at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
+	at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
+	at com.sun.proxy.$Proxy22.uri(Unknown Source)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:160)
+	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:63)
+	at runner.TestRunner.feature(TestRunner.java:63)
+
+tearDownClass(runner.TestRunner)  Time elapsed: 0.01 sec  <<< FAILURE!
+cucumber.runtime.CucumberException: java.lang.NoClassDefFoundError: com/aventstack/extentreports/reporter/ExtentHtmlReporter
+	at com.cucumber.listener.ExtentCucumberFormatter.setExtentHtmlReport(ExtentCucumberFormatter.java:51)
+	at com.cucumber.listener.ExtentCucumberFormatter.<init>(ExtentCucumberFormatter.java:35)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at cucumber.runtime.formatter.PluginFactory.instantiate(PluginFactory.java:107)
+	at cucumber.runtime.formatter.PluginFactory.create(PluginFactory.java:87)
+	at cucumber.runtime.RuntimeOptions.getPlugins(RuntimeOptions.java:245)
+	at cucumber.runtime.RuntimeOptions$1.invoke(RuntimeOptions.java:291)
+	at com.sun.proxy.$Proxy22.done(Unknown Source)
+	at cucumber.api.testng.TestNGCucumberRunner.finish(TestNGCucumberRunner.java:76)
+	at runner.TestRunner.tearDownClass(TestRunner.java:75)
+

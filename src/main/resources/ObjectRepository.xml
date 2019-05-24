@@ -1,0 +1,62 @@
+<Pages>
+	<HomePage>
+		<logoImage>
+			<Xpath>//img[@class='logo-img-responsive']</Xpath>
+		</logoImage>
+		<NavigationBaritems>
+			<Xpath>//div[@class='leftLinks']//a[text()='Changetext']</Xpath>
+		</NavigationBaritems>
+		<NewsBox>
+			<Xpath>//div[@class='newsBox']/h3</Xpath>
+		</NewsBox>
+		<ContactUs>
+			<Xpath>//div[@id='ac-globaldiv']//a[contains(@href,'contactus')]
+			</Xpath>
+		</ContactUs>
+	</HomePage>
+
+	<ContactUsPage>
+
+
+		<MandatoryDropDown>
+			<Xpath>//div[contains(@class,'has-error has-feedback')]//select
+			</Xpath>
+		</MandatoryDropDown>
+
+		<MandatoryInputBox>
+			<Xpath>//div[contains(@class,'has-error has-feedback')]//input
+			</Xpath>
+		</MandatoryInputBox>
+
+
+		<WelcomeMessage>
+			<Xpath>//div[@class= 'col-lg-6']/h3[text()='Contact Us']</Xpath>
+		</WelcomeMessage>
+		<SubProduct>
+			<Xpath>//select[@id='product']</Xpath>
+		</SubProduct>
+		<LookingTo>
+			<Xpath>//select[@id='reachoutforproduct']</Xpath>
+		</LookingTo>
+		<Product>
+			<Xpath>//select[@id='need']</Xpath>
+		</Product>
+		<Mobile>
+			<Xpath>//input[@id='mobile']</Xpath>
+		</Mobile>
+		<MobileNumberErrorMessage>
+			<Xpath>//span[@class= ''][@style='color: maroon']</Xpath>
+		</MobileNumberErrorMessage>
+
+		<MobileNumberErrorMessageHide>
+			<Xpath>//span[@class= 'ng-hide'][@style='color: maroon']</Xpath>
+		</MobileNumberErrorMessageHide>
+		<SubmitButton>
+			<Id>btnSubmit</Id>
+		</SubmitButton>
+
+	</ContactUsPage>
+
+
+
+</Pages>
